@@ -17,6 +17,7 @@ matrix:
       script:
         - cmake -G "MinGW Makefiles" .
         - cmake --build .
+        - dir
         - night ../tests/test.night
 
 before_install:
