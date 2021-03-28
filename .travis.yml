@@ -17,7 +17,7 @@ matrix:
       script:
         - cmake -G "MinGW Makefiles" .
         - cmake --build .
-        - night tests/test.night
+        - night ../tests/test.night
 
 before_install:
     - eval "${MATRIX_EVAL}"
