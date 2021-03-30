@@ -7,9 +7,8 @@ matrix:
         - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
         - sudo apt-get update -q
         - sudo apt-get install -y g++-7
-        - export CXX=/usr/bin/g++-7
       script:
-        - cmake .
+        - cmake cmake -G "Unix Makefiles" .
         - cmake --build .
         - ./night tests/test.night
     - os: windows
@@ -17,8 +16,6 @@ matrix:
       script:
         - cmake -G "MinGW Makefiles" .
         - cmake --build .
-        - night --version
-        - dir
         - night tests/test.night
 
 before_install:
